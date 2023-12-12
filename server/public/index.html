@@ -1,0 +1,89 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+
+  </head>
+  <body>
+    <nav class="bg-green uppercase py-1 border-gray-200 shadow-md">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a class="flex items-center space-x-3 rtl:space-x-reverse">
+          
+          <!-- <img src="https://img.icons8.com/?size=80&id=kEqfK1wJS3Be&format=png" class="h-8" alt="Logo" /> -->
+          <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Santa is coming home</span>
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+        </button>
+        <audio  class="audio" autoplay loop>
+          <source src="./jingle_bell_rock.mp3" type="audio/mp3">
+          Tu navegador no soporta la etiqueta de audio.
+        </audio> <button class="audio-control" onclick="toggleAudio()">🔔
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li>
+              <a href="#" class="block py-2 px-3 text-white text-2xl rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-white md:dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent">¿Where is Santa? 🎉</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="calendar">
+        <div class="calendar-header">
+          <span class="month-picker" id="month-picker"> May </span>
+          <div class="year-picker" id="year-picker">
+            <span class="year-change" id="pre-year">
+              <pre><</pre>
+            </span>
+            <span id="year">2023 </span>
+            <span class="year-change" id="next-year">
+              <pre>></pre>
+            </span>
+          </div>
+        </div>
+
+        <div class="calendar-body">
+          <div class="calendar-week-days">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+          <div class="calendar-days"></div>
+        </div>
+        <div class="calendar-footer"></div>
+        <div class="date-time-formate">
+          <div class="day-text-formate">TODAY</div>
+          <div class="date-time-value">
+            <div class="time-formate">02:51:20</div>
+            <div class="date-formate">23 - july - 2022</div>
+          </div>
+        </div>
+
+        <div class="month-list"></div>
+      </div>
+
+  </body>
+</html>
