@@ -6,10 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/app.js",
-    "start-dev": "nodemon app.js"
+    "start-dev": "nodemon app.js",
+    "build": "nodemon server/app.js"
   },
   "engines": {
-    "node": "18.17.0"
+    "node": "20.10.0"
   },
   "keywords": [],
   "author": "",
