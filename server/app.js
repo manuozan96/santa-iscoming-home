@@ -4,9 +4,17 @@ const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
+
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+// Middleware para manejar rutas sin la extensión .html
+app.use((req, res, next) => {
+  if (path.extname(req.path) === "" && req.path.slice(-1) !== "/") {
+    res.redirect(req.path + "/");
+  } else {
+    next();
+  }
+});
 
 // Configura la conexión a PostgreSQL
 const pool = new Pool({
@@ -17,7 +25,21 @@ const pool = new Pool({
   port: process.env.PGPORT,
 });
 
+// Middleware para manejar rutas con extensión .html
+app.use((req, res, next) => {
+  if (path.extname(req.path) === ".html") {
+    res.redirect(req.path.slice(0, -5)); // Redirige eliminando la extensión .html
+  } else {
+    next();
+  }
+});
+
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
+
+app.get("/:page", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", req.params.page + ".html"));
+});
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
@@ -43,6 +65,7 @@ app.post("/", async (req, res) => {
 });
 
 // Iniciar servidor
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor iniciado en el puerto ${PORT}`);
 });

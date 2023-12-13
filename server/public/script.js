@@ -192,6 +192,7 @@ function generateModalForm() {
 
       <label for="user-email" class="block mt-4 text-sm font-medium text-gray-700">Email</label>
       <input type="email" id="user-email" class="mt-1 p-2 border rounded-md w-full" placeholder="Enter your email" required>
+      
       <label for="otro-pag" class="block mt-4 text-sm font-medium text-gray-900">Choose another payment method</label>
 
       <!-- Información de la tarjeta de crédito -->
@@ -247,11 +248,11 @@ function toggleAudio() {
   if (audio.paused) {
     audio.play();
     // Cambia el contenido del botón cuando el audio está reproduciéndose
-    audioControlButton.innerHTML = "🔔";
+    audioControlButton.innerHTML = "🔕";
   } else {
     audio.pause();
     // Cambia el contenido del botón cuando el audio está pausado
-    audioControlButton.innerHTML = "🔕";
+    audioControlButton.innerHTML = "🔔";
   }
 }
 

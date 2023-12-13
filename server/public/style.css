@@ -114,7 +114,7 @@ body {
   /* background-image: url("https://i.pinimg.com/564x/34/80/25/3480254f60528bc837a963dda0a95f7e.jpg"); */
   /* background-image: url("https://i.pinimg.com/564x/f1/49/79/f14979c84a6fb4a94dc79f628080cb0d.jpg"); */
   background-size: cover;
-  background-color: #6a994e;
+  background-color: transparent;
   border-radius: 50px;
   overflow: hidden;
   padding: 50px 50px 0px 50px;
@@ -255,6 +255,24 @@ audio {
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
+
+.button-campana {
+  /* background-color: #f1eeeb; */
+  color: #ef233c;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+#map-container {
+  margin-top: 60%; /* Ajusta según sea necesario */
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: transparent; /* El color de fondo que desees para el navbar al hacerse sticky */
+}
+
 .month-list {
   position: relative;
   left: 0;
